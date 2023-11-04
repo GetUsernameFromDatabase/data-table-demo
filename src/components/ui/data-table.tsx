@@ -45,7 +45,6 @@ export function DataTable<TData, TValue>({
     [],
   );
   const [sorting, setSorting] = React.useState<SortingState>([]);
-  // TODO: translate
 
   const table = useReactTable({
     data,

@@ -24,6 +24,8 @@ export const columnInformation: Record<
 
 const columnHelper = createColumnHelper<TTableColumnData>();
 
+// Would love to use `ColumnDef<TTableColumnData>[]` but that won't work with columnHelper.accessor
+// https://github.com/TanStack/table/issues/4241
 export const demoTableColumns = [
   columnHelper.display({
     id: "select",

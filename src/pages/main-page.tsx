@@ -1,3 +1,4 @@
+import type { ColumnDef } from "@tanstack/react-table";
 import { useState } from "react";
 
 import { demoTableColumns } from "@/components/demo-table-columns";
@@ -12,7 +13,8 @@ export function MainPage() {
   return (
     <PageWrapper>
       <DataTable
-        columns={demoTableColumns}
+        // TODO: fix this typescript mess
+        columns={demoTableColumns as ColumnDef<(typeof localTableData)[0]>[]}
         data={localTableData}
         toolbar={(table) =>
           DemoTableToolbar({

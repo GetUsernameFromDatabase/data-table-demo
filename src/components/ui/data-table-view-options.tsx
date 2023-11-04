@@ -25,7 +25,6 @@ interface DataTableViewOptionsProperties<TData> {
 export function DataTableViewOptions<TData>({
   table,
 }: DataTableViewOptionsProperties<TData>) {
-  // TODO: translate
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>

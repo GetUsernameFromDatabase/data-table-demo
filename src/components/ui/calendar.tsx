@@ -51,11 +51,8 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        // I believe _properties are for types?
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        IconLeft: ({ ..._properties }) => <ChevronLeft className="h-4 w-4" />,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        IconRight: ({ ..._properties }) => <ChevronRight className="h-4 w-4" />,
+        IconLeft: () => <ChevronLeft className="h-4 w-4" />,
+        IconRight: () => <ChevronRight className="h-4 w-4" />,
       }}
       {...properties}
     />
