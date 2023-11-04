@@ -1,0 +1,13 @@
+{
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "ngClass",
+    ".*[cC]lassName"
+  ],
+  "tailwindCSS.experimental.classRegex": [
+    ".[Cc]lassName: '(.*)'",
+  ],
+  "files.eol": "\n"
+}
