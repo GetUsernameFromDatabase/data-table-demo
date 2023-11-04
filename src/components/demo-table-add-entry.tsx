@@ -119,6 +119,11 @@ export function DemoTableAddEntry({
                   <FormControl>
                     <Input placeholder={storedHuntsmen[0].name} {...field} />
                   </FormControl>
+                  <FormDescription>
+                    Plaan on siia teha valik inimestest.
+                    <br></br>
+                    Võibolla lisada ka võimalus uus inimene sisestada?
+                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -135,6 +140,12 @@ export function DemoTableAddEntry({
                       {...field}
                     />
                   </FormControl>
+                  <FormDescription>
+                    Kui jahimehe nimi on valitud olemasolevatest, siis selle
+                    välja kustutakse ära?
+                    <br></br>
+                    Näitaks lihtsalt Jahimehe infot, aga muuta ei lubaks
+                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -151,6 +162,10 @@ export function DemoTableAddEntry({
                       {...field}
                     />
                   </FormControl>
+                  <FormDescription>
+                    Tulevikus oleks see väli valik asjadest, mida saaks pakkuda
+                    + raha
+                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
