@@ -10,21 +10,21 @@ import { DataTableViewOptions } from "../ui/data-table-view-options";
 import { Input } from "../ui/input";
 
 import { DemoTableAddEntry } from "./demo-table-add-entry";
-import type { TTableColumnData } from "./demo-table-columns";
+import { type TTableColumnData, columnInformation } from "./demo-table-columns";
 
-export interface TDemoTableToolbarProperties<TData> {
+export interface TDemoTableToolbarProperties<TData = TTableColumnData> {
   table: Table<TData>;
-  filterColumn: string;
+  filterColumn: keyof TData;
   facetFilterColumns?: Partial<Record<keyof TData, TFacetFilterOptions[]>>;
-  setTableData?: React.Dispatch<React.SetStateAction<TTableColumnData[]>>;
+  setTableData?: React.Dispatch<React.SetStateAction<TData[]>>;
 }
 
-export function DemoTableToolbar<TData>({
+export function DemoTableToolbar({
   table,
   filterColumn,
   facetFilterColumns,
   setTableData,
-}: TDemoTableToolbarProperties<TData>) {
+}: TDemoTableToolbarProperties) {
   const isFiltered = table.getState().columnFilters.length > 0;
   const inputFilterColumn = table.getColumn(filterColumn);
 
@@ -50,9 +50,7 @@ export function DemoTableToolbar<TData>({
           </Button>
         )}
         {facetFilterColumns &&
-          Object.entries<(typeof facetFilterColumns)[keyof TData]>(
-            facetFilterColumns,
-          ).map(([key, value], index) => {
+          Object.entries(facetFilterColumns).map(([key, value], index) => {
             const tableColumn = table.getColumn(key);
             if (!tableColumn) return;
 
@@ -60,8 +58,8 @@ export function DemoTableToolbar<TData>({
               <DataTableFacetedFilter
                 key={index}
                 column={tableColumn}
-                title={key}
-                options={value!}
+                title={columnInformation[key as keyof TTableColumnData].label}
+                options={value}
               />
             );
           })}

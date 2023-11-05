@@ -88,5 +88,6 @@ export const demoTableColumns = [
         </>
       );
     },
+    filterFn: "arrIncludesSome",
   }),
 ];
