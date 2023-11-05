@@ -1,10 +1,9 @@
 import { createColumnHelper } from "@tanstack/react-table";
 import { DateTime } from "luxon";
 
-import type { THuntsMan } from "../data/data-huntsmen";
-import type { TTransaction } from "../data/data-transactions";
-
-import { Checkbox } from "./ui/checkbox";
+import type { THuntsMan } from "../../data/data-huntsmen";
+import type { TTransaction } from "../../data/data-transactions";
+import { Checkbox } from "../ui/checkbox";
 
 import { Badge } from "@/components/ui/badge";
 import { DataTableColumnHeader } from "@/components/ui/data-table-column-header";

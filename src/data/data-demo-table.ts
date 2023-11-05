@@ -1,4 +1,4 @@
-import type { TTableColumnData } from "../components/demo-table-columns";
+import type { TTableColumnData } from "../components/demo-table/demo-table-columns";
 
 import { storedHuntsmen } from "./data-huntsmen";
 import { storedTransactions } from "./data-transactions";

@@ -1,11 +1,11 @@
 import type { ColumnDef } from "@tanstack/react-table";
 import { useState } from "react";
 
-import { demoTableColumns } from "@/components/demo-table-columns";
-import { DemoTableToolbar } from "@/components/demo-table-toolbar";
+import { demoTableColumns } from "@/components/demo-table/demo-table-columns";
+import { DemoTableToolbar } from "@/components/demo-table/demo-table-toolbar";
 import { PageWrapper } from "@/components/page-wrapper";
 import { DataTable } from "@/components/ui/data-table";
-import { storedTableData } from "@/data";
+import { storedTableData } from "@/data/data-demo-table";
 
 export function MainPage() {
   const [localTableData, setLocalTableData] = useState([...storedTableData]);

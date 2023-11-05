@@ -1,15 +1,16 @@
 import type { Table } from "@tanstack/react-table";
 import { X } from "lucide-react";
 
-import { DemoTableAddEntry } from "./demo-table-add-entry";
-import type { TTableColumnData } from "./demo-table-columns";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import {
   DataTableFacetedFilter,
   type TFacetFilterOptions,
-} from "./ui/data-table-faceted-filter";
-import { DataTableViewOptions } from "./ui/data-table-view-options";
-import { Input } from "./ui/input";
+} from "../ui/data-table-faceted-filter";
+import { DataTableViewOptions } from "../ui/data-table-view-options";
+import { Input } from "../ui/input";
+
+import { DemoTableAddEntry } from "./demo-table-add-entry";
+import type { TTableColumnData } from "./demo-table-columns";
 
 export interface TDemoTableToolbarProperties<TData> {
   table: Table<TData>;

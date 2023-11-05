@@ -7,7 +7,7 @@ import { SlidersHorizontal } from "lucide-react";
 import {
   type TTableColumnData,
   columnInformation,
-} from "../demo-table-columns";
+} from "../demo-table/demo-table-columns";
 
 import { Button } from "./button";
 import {

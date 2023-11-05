@@ -4,8 +4,7 @@ import { DateTime } from "luxon";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-import { type TTableColumnData, columnInformation } from "./demo-table-columns";
-import { Calendar } from "./ui/calendar";
+import { Calendar } from "../ui/calendar";
 import {
   Form,
   FormControl,
@@ -14,10 +13,12 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "./ui/form";
-import { Input } from "./ui/input";
-import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
-import { useToast } from "./ui/use-toast";
+} from "../ui/form";
+import { Input } from "../ui/input";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import { useToast } from "../ui/use-toast";
+
+import { type TTableColumnData, columnInformation } from "./demo-table-columns";
 
 import { Button } from "@/components/ui/button";
 import {
