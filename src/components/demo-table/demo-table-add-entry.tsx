@@ -77,20 +77,23 @@ export function DemoTableAddEntry({
   console.log(setTableData);
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
+    const processedData = {
+      ...data,
+      payment_to_huntsman: data.payment_to_huntsman.split(/,\s*/),
+    };
     toast({
       title: "Lisatud andmed:",
       description: (
         <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
+          <code className="text-white">
+            {JSON.stringify(processedData, null, 2)}
+          </code>
         </pre>
       ),
     });
+
     if (setTableData) {
-      const newValue = {
-        ...data,
-        payment_to_huntsman: [data.payment_to_huntsman],
-      };
-      setTableData((previousValue) => [...previousValue, newValue]);
+      setTableData((previousValue) => [...previousValue, processedData]);
     }
   }
 
@@ -166,6 +169,9 @@ export function DemoTableAddEntry({
                   <FormDescription>
                     Tulevikus oleks see väli valik asjadest, mida saaks pakkuda
                     + raha
+                    <br></br>
+                    Praegu mitme välja sisestamiseks tuleb kasutada{" "}
+                    <strong>koma (,)</strong>
                   </FormDescription>
                   <FormMessage />
                 </FormItem>
